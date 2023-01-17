@@ -1,6 +1,9 @@
 # Downloading & Installing Tool
+
 1.Download and install Node.js (https://nodejs.org/en/download/)
+
 2.Download https://github.com/Curfan/developer-task project
+
 3.cd to "my-app" folder and then print "npm install"
 
 # Getting Started with Create React App
