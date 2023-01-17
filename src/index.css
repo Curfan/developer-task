@@ -1,13 +1,321 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* --normorlize-- */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Interstate';
+    position: relative;
+    font-family:'Overpass','Roboto';
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* --reusable compoennts-- */
+
+h1{
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 36px;
+    text-align: left;
+}
+h2{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+}
+h3{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+}
+h4{
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 16px;
+}
+.input-content input{
+    width:100%;
+    background-color: #F1F5FF;
+    border-radius: 4px;
+    border:0px;
+    padding:22px 12px 10px 12px;
+}
+
+
+/* --reusable margin-- */
+
+.mg-t-8{
+    margin-top: 8px;
+}
+.mg-t-16{
+    margin-top: 16px;
+}
+.mg-t-24{
+    margin-top: 24px;
+}
+.mg-t-32{
+    margin-top:32px;
+}
+.margin-right{
+    margin-right: 20px;
+}
+.margin-left{
+    margin-left:10px;
+}
+
+/* --base-- */
+
+body{
+    background-color: #F1F5FF;
+    width:100vw;
+    height:100vh;
+}
+
+#root{
+    width:100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+}
+.container{
+    width:610px;
+    max-width:610px;
+    display: flex;
+}
+
+/* --components-- */
+
+.btn{
+    border:1px #3C71FF solid;
+    border-radius: 4px;
+    background-color: #fff;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex:1;
+    padding:16px 0px;
+    transition:0.3 ease-in-out;
+    white-space:nowrap
+}
+.btn:hover{
+    background-color: #3C71FF;
+    color:#fff;
+    box-shadow: 0px 6px 15px rgba(60, 113, 255, 0.4);
+}
+.btn:hover ~img{
+    background-color: #fff;
+}
+.btn:nth-child(1){
+    margin-right:10px;
+}
+.btn:nth-child(2){
+    margin-left:10px;
+}
+
+
+
+.popup{
+    width:100%;
+    padding:24px 8px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0px 5px 10px 5px rgba(222, 231, 255, 0.25);
+}
+.popup-content{
+    width:401px;
+    max-width: 481px;
+
+}
+
+.small-btn{
+    width:100%;
+}
+.fb{
+    width:16px;
+    height:16px;
+    margin-right: 12px;
+}
+
+.btn:hover .fb path{
+    fill:#ffffff;
+}
+.btnRow-content{
+    width:100%;
+    display: flex;
+}
+.hint-content{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.line{
+    width:175px;
+    height:1px;
+    background-color: #000;
+
+}
+.input-content{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+.name .input-box:nth-child(1){
+    margin-right:10px;
+}
+.name .input-box:nth-child(2){
+    margin-left:10px;
+}
+.input-box{
+    flex:1;
+}
+.input-box span{
+    position: absolute;
+    top:50%;
+    left:12px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    transition: 0.2s ease-in-out;
+    color:#757575;
+}
+
+.input-box input:focus ~ span,
+.input-box input:valid ~ span{
+    top:30%;
+    left:12px;
+    font-size:10px;
+}
+.name{
+    width:100%;
+    display: flex;
+}
+
+input[type ='checkbox']{
+    appearance: none;
+    min-width: 18px;
+    height:18px;
+    display: block;
+    background-color: #ABABAB;
+    border-radius: 5px;
+}
+input[type ='checkbox']::after{
+    content:url(https://svgshare.com/i/p_w.svg);
+    display: block;
+    opacity: 0;
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+}
+input[type ='checkbox']:checked{
+    background-color: #fff;
+    border: 1px solid #3C71FF;
+}
+input[type ='checkbox']:checked:after{
+    opacity: 1;
+}
+.checkBox{
+    display:flex;
+    align-items: center;
+}
+
+.checkBox p{
+    margin:0px 8px;
+    font-size:13px;
+}
+
+.primaryButton-content{
+    width:100%;
+}
+
+.primaryButton button{
+    width:100%;
+    padding:16px 0;
+    background-color: #3C71FF;
+    color:#fff;
+    border-radius: 4px;
+    border: none;
+}
+.logInHint{
+    text-align: center;
+}
+
+.logInHint a{
+    color:#3C71FF
+}
+.logInHint a:hover{
+    text-decoration: underline;
+    font-weight: 700;
+}
+.textbtn{
+    display: inline-block;
+    padding:0px 12px;
+}
+.textbtn img{
+    margin-right:8px;
+}
+.textbtn:hover .underline{
+    width:100%;
+    height:2px;
+    background-color: #3C71FF;
+    opacity:1;
+}
+.underline{
+    width:100%;
+    height:2px;
+    background-color: #3C71FF;
+    opacity:0;
+}
+
+.backbtn-content{
+    width:100%;
+}
+.input-box button{
+    position: absolute;
+    right:12px;
+    top:50%;
+    transform: translateY(-50%);
+    display:flex;
+    align-items: center;
+    background-color: transparent;
+    border:0;
+}
+.view-off{
+    filter: invert(75%) sepia(4%) saturate(29%) hue-rotate(28deg) brightness(91%) contrast(92%);
+}
+.view-on{
+    filter: invert(37%) sepia(21%) saturate(7226%) hue-rotate(215deg) brightness(103%) contrast(101%);
+}
+.hint-list{
+    display: inline-flex;
+}
+
+.inputHint{
+    width:100%;
+    display: flex;
+    align-items: center;
+    white-space:nowrap;
+}
+.inputHint:nth-child(1){
+    margin-right:16px;
+}
+.inputHint h4{
+    margin-left:4px;
+}
+
+.displayOff{
+    display: none;
+}
+.diplayOn{
+    display:block;
+}
+
+.displayInValid{
+    color:#ABABAB;
+}
+.displayValid{
+    color:#000;
 }
